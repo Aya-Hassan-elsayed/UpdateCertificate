@@ -1,0 +1,41 @@
+<div class="main-wrapper">
+  <div class="main">
+    <div class="card">
+      <div class="card-image">
+        <img src="../../../assets/images/header/logo.png" alt="Logo" class="logo-image">
+      </div>
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+     
+      <div class="card-body">
+        <form [formGroup]="LoginForm" (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="userName" class="form-label">Username <span style="color: brown;">*</span></label>
+            <input type="text" class="form-control form-control-lg form-control-solid"formControlName="userName" id="userName" placeholder="Username" required>
+            <small *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="block p-error">
+              <div *ngIf="userName.errors?.['required']" class="error-text">This field is required
+              </div>
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password   <span style="color: brown;">*</span></label>
+            <input type="{{ showPassword ? 'text' : 'password' }}"  class="form-control form-control-lg form-control-solid" formControlName="password" id="password" placeholder="Password" required>
+            <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+              <div *ngIf="password.errors?.['required']" class="error-text">This field is required
+              </div>
+            </small>
+            <div class="d-flex justify-content-end">
+              <mat-checkbox class="custom-checkbox" (change)="togglePasswordVisibility()">
+                <span style="color: #6f8c55;">Show Password</span>
+              </mat-checkbox>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-warning custom-button"  (click)="login()">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

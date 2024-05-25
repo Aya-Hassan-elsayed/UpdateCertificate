@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import '../../../assets/bootstrap-v4/css/bootstrap.css';
+
+* {
+  font-family: 'Poppins', cursive;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f7f8fa;
+  font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+:host {
+  font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f8fa;
+}
+
+.main {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-image {
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  width: 200px;
+}
+
+.card-header h2 {
+  font-size: 1.50rem;
+  margin: auto;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  font-weight: 500;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #E4E6EF;
+  appearance: none;
+  direction: ltr !important;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #E4E6EF;
+    border-radius: 4px;
+  box-shadow: none !important;
+}
+
+.block.p-error {
+  color: red;
+}
+
+.error-text {
+  color: red;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.custom-checkbox {
+  margin-top: 10px;
+}
+
+.custom-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
+
+.form-control.form-control-solid{
+  border-color: #F5F8FA;
+  color: #5E6278;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+}
+.form-control-lg {
+  min-height: calc(1.5em + 1.65rem + 2px);
+  padding: 0.825rem 1.5rem;
+  font-size: 1.15rem;
+  border-radius: 0.625rem;
+  background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+}
+
