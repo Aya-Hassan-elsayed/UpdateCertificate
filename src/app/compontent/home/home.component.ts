@@ -1,17 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { AllUpdateService } from '../../service/all-update.service';
+import { FormControl } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 
+
+
+
+export interface PeriodicElement {
+  userName: string;
+  updatedAt: Date;
+  recordsUpdated: number;
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent  implements OnInit{
+  usernameControl = new FormControl('');
+  DateControl=new FormControl('');
+
+  displayedColumns: string[] = ['userName', 'updatedAt', 'recordsUpdated'];
+
+  dataSource: PeriodicElement[] = [];
+    currentPage: number = 1;
+  totalItems: number = 0;
+  totalPage: number = 0;
+  totalCount: number = 0;
+  addedDateFilter: string = '';
+  selectedFilter: string = '';
+ 
   
   selectedComponent: string = 'none'
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service:AllUpdateService) {}
+
+  ngOnInit(): void {
+  }
 
   onComponentChange() {
     let route: string;
@@ -29,6 +57,9 @@ export class HomeComponent {
       case 'component4':
         route = 'UpdateE2';
         break;
+        case 'component5':
+          route = 'AllUpdate';
+          break;
       default:
         // Navigate to the "home" component when "Select" is chosen
         route = 'home';
@@ -38,4 +69,7 @@ export class HomeComponent {
     // Navigate to the determined route
     this.router.navigate([route]);
   }
+
+
+
 }

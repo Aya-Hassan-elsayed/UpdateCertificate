@@ -12,18 +12,22 @@ import { UpdateLaraComponent } from './compontent/update-lara/update-lara.compon
 import { UpdateEslam1Component } from './compontent/update-eslam1/update-eslam1.component';
 import { UpdateEslam2Component } from './compontent/update-eslam2/update-eslam2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './compontent/footer/footer.component';
 import { HomeComponent } from './compontent/home/home.component';
 import { LoginComponent } from './compontent/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NavbarComponent } from './compontent/navbar/navbar.component';
 import { IslamComponent } from './compontent/islam/islam.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgToastModule } from 'ng-angular-popup' // to be added
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { MatOptionModule } from '@angular/material/core';
+import { PaginationDirective } from './directive/pagination.directive';
+import { MatTableModule } from '@angular/material/table';
+import { GetAllUpdateComponent } from './compontent/get-all-update/get-all-update.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HeaderComponent } from './compontent/header/header.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 
 @NgModule({
@@ -35,15 +39,14 @@ import { MatOptionModule } from '@angular/material/core';
     UpdateLaraComponent,
     UpdateEslam1Component,
     UpdateEslam2Component,
-    FooterComponent,
     HomeComponent,
     LoginComponent,
-    NavbarComponent,
+    TruncatePipe,
+ 
     IslamComponent,
-    
-   
-
-
+    PaginationDirective,
+    GetAllUpdateComponent,
+    HeaderComponent,
     
   ],
   imports: [
@@ -64,7 +67,11 @@ import { MatOptionModule } from '@angular/material/core';
     MatFormFieldModule,
     MatCardModule,
     MatCheckboxModule,
-    ToastrModule.forRoot(),
+    MatTableModule,
+   MatCardModule,
+
+   NgxSpinnerModule.forRoot({ type: 'ball-circus' }),
+   ToastrModule.forRoot(),
     
  
   ],

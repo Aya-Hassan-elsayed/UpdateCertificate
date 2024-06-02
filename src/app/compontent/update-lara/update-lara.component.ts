@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { LaraService } from '../../service/lara.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-update-lara',
   templateUrl: './update-lara.component.html',
@@ -14,8 +15,9 @@ export class UpdateLaraComponent implements OnInit {
   errorMessage: string = "";
   error: boolean = false;
 
-
-  constructor( private service:LaraService , private toaster:ToastrService) {}
+constructor( private service:LaraService , 
+  private toaster:ToastrService,
+  private spinner:NgxSpinnerService) {}
 
   ngOnInit(): void {
   }
@@ -26,6 +28,7 @@ export class UpdateLaraComponent implements OnInit {
   }
 
   upload() {
+    this.spinner.show()
     if (!this.file) {
       this.toaster.error("No file selected!");
       return;
@@ -41,6 +44,7 @@ export class UpdateLaraComponent implements OnInit {
       (data) => {
         console.log(data); 
         this.toaster.success(data, "Success",  { disableTimeOut: true, positionClass: 'toast-top-center' }); 
+        this.spinner.hide()
       },
       (error: any) => {
         if (error && error.error) {
@@ -50,6 +54,7 @@ export class UpdateLaraComponent implements OnInit {
         }
         this.error = true;
         this.toaster.error(this.errorMessage, "Error", { disableTimeOut: true, positionClass: 'toast-top-center' });
+        this.spinner.hide()
         this.flag = true;
       }
     );

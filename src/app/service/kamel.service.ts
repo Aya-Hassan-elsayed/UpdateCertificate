@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class KamelService {
-  private FileUploadUrl = 'http://10.100.102.50:5001/api/Zezo/updatedKamel';
+  private FileUploadUrl = 'http://10.100.102.50:5031/api/Zezo/updatedKamel';
 
 
   constructor(private http: HttpClient) {}

@@ -1,0 +1,47 @@
+/* Navbar styles */
+* {
+    font-family: cursive;
+  }
+  
+.navbar {
+    background-color: rgba(44, 62, 80, 0.9);       height: 100px; /* Set the height of the navbar */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Distribute items at the start and end of the container */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+/* Logo styles */
+.logo {
+    max-width: 100px; /* Set the maximum width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    color: white;
+}
+
+/* Styles for right content */
+.right-content {
+    display: flex;
+    align-items: center;
+    
+}
+.custom-button {
+    background-color: #00AFA3; /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 20px; /* Button text size */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.custom-button:hover {
+    background-color: #008f8a; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.custom-button:active {
+    background-color: #007b7a; /* Even darker shade on active */
+    transform: translateY(1px); /* Slight press effect on active */
+}

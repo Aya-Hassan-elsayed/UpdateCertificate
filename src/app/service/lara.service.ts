@@ -7,7 +7,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class LaraService {
 
-  private FileUploadUrl = 'http://10.100.102.50:5001/api/Zezo/updatedLara';
+  private FileUploadUrl = 'http://10.100.102.50:5031/api/Zezo/updatedLara';
 
   constructor(private http: HttpClient) {}
   uploadFile(file: File, token: string) {

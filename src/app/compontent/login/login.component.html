@@ -11,7 +11,7 @@
       <div class="card-body">
         <form [formGroup]="LoginForm" (ngSubmit)="login()">
           <div class="form-group">
-            <label for="userName" class="form-label">Username <span style="color: brown;">*</span></label>
+            <label for="userName" class="label">Username <span style="color: brown;">*</span></label>
             <input type="text" class="form-control form-control-lg form-control-solid"formControlName="userName" id="userName" placeholder="Username" required>
             <small *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="block p-error">
               <div *ngIf="userName.errors?.['required']" class="error-text">This field is required
@@ -19,7 +19,7 @@
             </small>
           </div>
           <div class="form-group">
-            <label for="password" class="form-label">Password   <span style="color: brown;">*</span></label>
+            <label for="password" class="label">Password   <span style="color: brown;">*</span></label>
             <input type="{{ showPassword ? 'text' : 'password' }}"  class="form-control form-control-lg form-control-solid" formControlName="password" id="password" placeholder="Password" required>
             <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
               <div *ngIf="password.errors?.['required']" class="error-text">This field is required

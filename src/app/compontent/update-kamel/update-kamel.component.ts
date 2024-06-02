@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { KamelService } from '../../service/kamel.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class UpdateKamelComponent implements OnInit {
 
   constructor(private http: HttpClient, 
     private toaster: ToastrService,
-    private service:KamelService) {}
+    private service:KamelService,
+    private spinner:NgxSpinnerService) {}
 
   ngOnInit(): void {
 
@@ -28,6 +30,7 @@ export class UpdateKamelComponent implements OnInit {
     console.log(this.file);
   }
   upload() {
+    this.spinner.show()
     if (!this.file) {
       this.toaster.error("No file selected!");
       return;
@@ -44,6 +47,7 @@ export class UpdateKamelComponent implements OnInit {
       (data) => {
         console.log(data); 
         this.toaster.success(data, "Success",  { disableTimeOut: true, positionClass: 'toast-top-center' }); 
+        this.spinner.hide()
       },
       (error: any) => {
         if (error && error.error) {
@@ -53,6 +57,7 @@ export class UpdateKamelComponent implements OnInit {
         }
         this.error = true;
         this.toaster.error(this.errorMessage, "Error", { disableTimeOut: true, positionClass: 'toast-top-center' });
+        this.spinner.hide()
         this.flag = true;
       }
     );

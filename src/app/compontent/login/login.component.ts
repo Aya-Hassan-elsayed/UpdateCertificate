@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Login } from '../interface/Dtos';
 import { AuthService } from '../../service/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private services: AuthService,
     private toaster: ToastrService,
-    private router: Router
+    private router: Router,
+    private spinner:NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+  
     this.services.login(this.LoginForm.value).subscribe(
       (res: Login) => {
         if (res && res.token) {

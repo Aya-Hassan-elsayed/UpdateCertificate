@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private apiUrl = 'http://10.100.102.50:5001/api/User';
+  private apiUrl = 'http://10.100.102.50:5031/api/User';
 
   constructor(private http: HttpClient, private router:Router) {}
 

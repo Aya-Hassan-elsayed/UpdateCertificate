@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class Eslam2Service {
-  private FileUploadUrl = 'http://10.100.102.50:5001/api/Zezo/e3ada';
+  private FileUploadUrl = 'http://10.100.102.50:5031/api/Zezo/e3ada';
 
   constructor(private http: HttpClient) {}
 

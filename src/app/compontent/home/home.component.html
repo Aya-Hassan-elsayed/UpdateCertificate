@@ -1,6 +1,5 @@
-
+<app-header></app-header>
 <div class="custom-select-content-wrapper">
-  <app-navbar></app-navbar>
 
   <div class="custom-select-form-wrapper">
     <h1 class="custom-select-heading">Custom Select Box</h1>
@@ -9,7 +8,6 @@
         <select
           id="componentSelector"
           name="sources"
-          id="sources"
           class="custom-select sources"
           data-placeholder="Select box"
           [(ngModel)]="selectedComponent"
@@ -23,10 +21,9 @@
         </select>
       </fieldset>
     </form>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
+  </div>
+
+  <div class="component-wrapper">
+    <app-get-all-update></app-get-all-update>
   </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

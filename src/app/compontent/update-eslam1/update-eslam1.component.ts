@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Eslam1Service } from '../../service/eslam1.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-update-eslam1',
@@ -14,16 +15,18 @@ export class UpdateEslam1Component implements OnInit {
   errorMessage: string = "";
   error: boolean = false;
 
-  constructor(private service: Eslam1Service, private toaster: ToastrService) {}
+  constructor(private service: Eslam1Service,
+     private toaster: ToastrService,
+  private spinner:NgxSpinnerService  ) {}
 
   ngOnInit(): void {}
 
-  selectFile(event: any) {
+  selectfile(event: any) {
     this.file = event.target.files[0];
     console.log(this.file);
   }
-
   upload() {
+    this.spinner.show()
     if (!this.file) {
       this.toaster.error("No file selected!");
       return;
@@ -35,10 +38,13 @@ export class UpdateEslam1Component implements OnInit {
       return;
     }
   
+  
     this.service.uploadFile(this.file, token).subscribe(
       (data) => {
         console.log(data); 
-        this.toaster.success(data, "Success",  { disableTimeOut: true, positionClass: 'toast-top-center' }); 
+       
+       this.toaster.success(data, "Success",  { disableTimeOut: true, positionClass: 'toast-top-center' }); 
+       this.spinner.hide()
       },
       (error: any) => {
         if (error && error.error) {
@@ -48,6 +54,7 @@ export class UpdateEslam1Component implements OnInit {
         }
         this.error = true;
         this.toaster.error(this.errorMessage, "Error", { disableTimeOut: true, positionClass: 'toast-top-center' });
+        this.spinner.hide()
         this.flag = true;
       }
     );
