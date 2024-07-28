@@ -22,6 +22,15 @@ export class IslamComponent {
       case 'component4':
         route = 'UpdateE2';
         break;
+        case 'component5':
+              route = 'Notepad_islam';
+              break;
+              case 'component6':
+                route = 'New_orders';
+                break;
+                case 'component7':
+                  route = 'RE_orders';
+                  break;
       default:
         // Navigate to the "home" component when "Select" is chosen
         route = 'islam';

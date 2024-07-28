@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
     if (roles.includes('user')) {
       this.router.navigate(['UpdateKamel']);
     } else if (roles.includes('admin')) {
-      this.router.navigate(['UpdateLara']);
+      this.router.navigate(['Lara']);
     } else if (roles.includes('teamleader')) {
       this.router.navigate(['islam']);
     } else if (roles.includes('manger') || roles.includes('bigmanger')) {

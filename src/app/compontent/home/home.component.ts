@@ -57,9 +57,12 @@ export class HomeComponent  implements OnInit{
       case 'component4':
         route = 'UpdateE2';
         break;
-        case 'component5':
-          route = 'AllUpdate';
-          break;
+          case 'component5':
+            route = 'Notepad_lara';
+            break;
+            case 'component6':
+              route = 'Notepad_islam';
+              break;
       default:
         // Navigate to the "home" component when "Select" is chosen
         route = 'home';

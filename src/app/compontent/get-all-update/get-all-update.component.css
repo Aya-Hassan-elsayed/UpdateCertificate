@@ -117,4 +117,31 @@ form {
   .material-icons {
     vertical-align: middle;
   }
+ /* Styles for the file download section */
+.file-download-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .file-path {
+    margin-left: 10px;
+  }
+  
+  .file-path a {
+    color: #007bff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .file-path a:hover {
+    text-decoration: underline;
+  }
+  
+  .file-path mat-icon {
+    margin-right: 5px;
+  }
+  .download{
+    color: #007bff;
+  }
   

@@ -28,6 +28,11 @@ import { GetAllUpdateComponent } from './compontent/get-all-update/get-all-updat
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderComponent } from './compontent/header/header.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { LaraComponent } from './compontent/lara/lara.component';
+import { NotepadIslamComponent } from './compontent/notepad-islam/notepad-islam.component';
+import { NotepadLaraComponent } from './compontent/notepad-lara/notepad-lara.component';
+import { NewOrdersComponent } from './compontent/new-orders/new-orders.component';
+import { REOrdersComponent } from './compontent/reorders/reorders.component';
 
 
 @NgModule({
@@ -42,11 +47,16 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     HomeComponent,
     LoginComponent,
     TruncatePipe,
- 
     IslamComponent,
     PaginationDirective,
     GetAllUpdateComponent,
     HeaderComponent,
+    LaraComponent,
+  
+    NotepadIslamComponent,
+       NotepadLaraComponent,
+       NewOrdersComponent,
+       REOrdersComponent,
     
   ],
   imports: [
